@@ -74,65 +74,6 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
 NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-**Important:** Never commit `.env.local` to GitHub! It's already in `.gitignore`.
-
-## 🚢 Deployment
-
-### Vercel (Recommended - Easiest)
-
-1. **Push to GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: Portfolio website"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-   git push -u origin main
-   ```
-
-2. **Deploy on Vercel:**
-   - Go to [https://vercel.com](https://vercel.com)
-   - Click "Add New Project"
-   - Import your GitHub repository
-   - Add environment variables in Vercel dashboard:
-     - `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-     - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
-     - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-   - Click "Deploy"
-   - Your site will be live in minutes!
-
-### GitHub Pages (Static Export)
-
-1. Update `next.config.ts`:
-```typescript
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-};
-
-export default nextConfig;
-```
-
-2. Build and deploy:
-```bash
-npm run build
-# The 'out' folder contains your static site
-# Push 'out' folder contents to gh-pages branch
-```
-
-3. Enable GitHub Pages in repository settings
-
-### Netlify (Alternative)
-
-1. Push to GitHub
-2. Connect repository on Netlify
-3. Add environment variables
-4. Deploy automatically
-
 ## 📝 License
 
 This project is private and proprietary.
