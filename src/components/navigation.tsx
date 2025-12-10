@@ -6,9 +6,11 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
-  { href: "/experience", label: "Experience" },
   { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/recommendations", label: "Recommendations" },
 ];
 
 export function Navigation() {
@@ -25,7 +27,7 @@ export function Navigation() {
           Saad Mehmood
         </Link>
 
-        <div className="hidden sm:flex gap-1 sm:gap-1.5 overflow-x-auto scrollbar-hide flex-1 justify-end">
+        <div className="hidden sm:flex gap-1.5 sm:gap-2 md:gap-2.5 items-center overflow-x-auto scrollbar-hide flex-1 justify-end">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (

@@ -4,6 +4,7 @@ export type Project = {
   stack: string[];
   link: string;
   status?: string;
+  image?: string;
 };
 
 export type Experience = {
@@ -53,6 +54,16 @@ export type Education = {
   credential: string;
   field: string;
   grade: string;
+};
+
+export type Blog = {
+  title: string;
+  description: string;
+  link: string;
+  platform: string;
+  date: string;
+  readTime?: string;
+  tags?: string[];
 };
 
 export const hero: HeroContent = {
@@ -409,6 +420,19 @@ export const education: Education[] = [
     credential: "Matric in Computer Science",
     field: "Computer Science",
     grade: "Grade: A+",
+  },
+];
+
+export const blogs: Blog[] = [
+  {
+    title: "Streamlining User Registration and Authentication with Microsoft Graph API & Node.js",
+    description:
+      "Learn how to implement seamless user registration and authentication using Microsoft Graph API with Node.js. This guide covers integration patterns, best practices, and step-by-step implementation for building secure authentication flows.",
+    link: "https://medium.com/@saadmehmood131/streamlining-user-registration-and-authentication-with-microsoft-graph-api-node-js-62136fa8aa3b",
+    platform: "Medium",
+    date: "2025",
+    readTime: "5 min read",
+    tags: ["Node.js", "Microsoft Graph API", "Authentication", "Backend Development"],
   },
 ];
 

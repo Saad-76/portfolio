@@ -2,9 +2,8 @@ import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { ContactSection } from "@/components/contact-section";
 import { EducationSection } from "@/components/education-section";
-import { RecommendationsSection } from "@/components/recommendations-section";
 import { ToolingSection } from "@/components/tooling-section";
-import { contact, education, recommendations, toolset } from "@/data/portfolio";
+import { contact, education, toolset } from "@/data/portfolio";
 
 export default function AboutPage() {
   return (
@@ -31,7 +30,6 @@ export default function AboutPage() {
           <EducationSection education={education} />
         </div>
 
-        <RecommendationsSection recommendations={recommendations} />
         <ContactForm />
         <ContactSection contact={contact} />
       </main>
