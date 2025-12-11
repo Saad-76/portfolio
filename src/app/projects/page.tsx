@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { projects, type Project } from "@/data/portfolio";
+
+const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+
+export const metadata: Metadata = {
+  title: "Projects | Saad Mehmood — Featured Work",
+  description: "All projects by Saad Mehmood: full-stack, Nest.js, React, TypeScript, PostgreSQL, AWS, and more.",
+  alternates: {
+    canonical: `${siteUrl}/projects`,
+  },
+};
 
 type GroupedProjects = { year: string; projects: Project[] }[];
 

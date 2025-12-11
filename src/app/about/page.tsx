@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { EducationSection } from "@/components/education-section";
 import { ToolingSection } from "@/components/tooling-section";
 import { contact, education, toolset } from "@/data/portfolio";
+
+const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+
+export const metadata: Metadata = {
+  title: "About | Saad Mehmood — Senior Software Engineer",
+  description: "Skills, background, and education of Saad Mehmood. Full-stack, Nest.js, React, TypeScript, PostgreSQL, AWS, CI/CD.",
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+};
 
 const profileMetrics = [
   { label: "Years shipping", value: "4+" },

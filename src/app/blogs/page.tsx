@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionCard } from "@/components/section-card";
 import { blogs } from "@/data/portfolio";
+
+const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+
+export const metadata: Metadata = {
+  title: "Blogs | Saad Mehmood — Engineering Articles",
+  description: "Technical articles and tutorials by Saad Mehmood on Node.js, Next.js, TypeScript, authentication, and performance.",
+  alternates: {
+    canonical: `${siteUrl}/blogs`,
+  },
+};
 
 export default function BlogsPage() {
   return (

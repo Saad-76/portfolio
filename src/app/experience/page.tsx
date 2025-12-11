@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ExperienceSection } from "@/components/experience-section";
 import { SectionCard } from "@/components/section-card";
 import { experiences, metrics } from "@/data/portfolio";
+
+const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+
+export const metadata: Metadata = {
+  title: "Experience | Saad Mehmood — Professional Journey",
+  description: "Professional experience of Saad Mehmood: full-stack engineering, Nest.js, React, PostgreSQL, AWS, and leadership.",
+  alternates: {
+    canonical: `${siteUrl}/experience`,
+  },
+};
 
 export default function ExperiencePage() {
   return (
