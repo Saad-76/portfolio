@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { SectionCard } from "@/components/section-card";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -61,117 +60,108 @@ export function ContactForm() {
   };
 
   return (
-    <SectionCard>
-      <div>
-        <p className="text-sm uppercase tracking-[0.25em] text-indigo-300">Get In Touch</p>
-        <h2 className="text-3xl font-semibold bg-gradient-to-r from-indigo-200 to-purple-200 bg-clip-text text-transparent mb-6">
-          Send a Message
-        </h2>
-      </div>
-
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-slate-300 mb-2"
-            >
-              Name *
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full rounded-xl border border-indigo-500/20 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-400/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-slate-300 mb-2"
-            >
-              Email *
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full rounded-xl border border-indigo-500/20 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-400/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all"
-              placeholder="your.email@example.com"
-            />
-          </div>
-        </div>
-
+    <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
         <div>
           <label
-            htmlFor="subject"
-            className="block text-sm font-medium text-slate-300 mb-2"
+            htmlFor="name"
+              className="block text-sm font-semibold text-gray-800 mb-2"
           >
-            Subject *
+            Name *
           </label>
           <input
             type="text"
-            id="subject"
-            name="subject"
+            id="name"
+            name="name"
             required
-            value={formData.subject}
+            value={formData.name}
             onChange={handleChange}
-            className="w-full rounded-xl border border-indigo-500/20 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-400/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all"
-            placeholder="What's this about?"
+              className="w-full rounded-2xl border border-gray-200 bg-white px-4 sm:px-5 py-3.5 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/25 transition-all"
+            placeholder="Your name"
           />
         </div>
-
         <div>
           <label
-            htmlFor="message"
-            className="block text-sm font-medium text-slate-300 mb-2"
+            htmlFor="email"
+              className="block text-sm font-semibold text-gray-800 mb-2"
           >
-            Message *
+            Email *
           </label>
-          <textarea
-            id="message"
-            name="message"
+          <input
+            type="email"
+            id="email"
+            name="email"
             required
-            rows={6}
-            value={formData.message}
+            value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-xl border border-indigo-500/20 bg-white/5 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-400/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 transition-all resize-none"
-            placeholder="Tell me about your project or inquiry..."
+              className="w-full rounded-2xl border border-gray-200 bg-white px-4 sm:px-5 py-3.5 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/25 transition-all"
+            placeholder="your.email@example.com"
           />
         </div>
+      </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full sm:w-auto rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-8 py-3 text-sm font-semibold text-white transition-all hover:from-indigo-400 hover:to-purple-400 shadow-lg shadow-indigo-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+      <div>
+        <label
+          htmlFor="subject"
+            className="block text-sm font-semibold text-gray-800 mb-2"
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
-        </button>
+          Subject *
+        </label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          value={formData.subject}
+          onChange={handleChange}
+            className="w-full rounded-2xl border border-gray-200 bg-white px-4 sm:px-5 py-3.5 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/25 transition-all"
+          placeholder="What's this about?"
+        />
+      </div>
 
-        {submitStatus === "success" && (
-          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-            <p className="text-sm text-emerald-300">
-              ✓ Message sent successfully! I&apos;ll get back to you soon.
-            </p>
-          </div>
-        )}
+      <div>
+        <label
+          htmlFor="message"
+            className="block text-sm font-semibold text-gray-800 mb-2"
+        >
+          Message *
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={6}
+          value={formData.message}
+          onChange={handleChange}
+            className="w-full rounded-2xl border border-gray-200 bg-white px-4 sm:px-5 py-3.5 text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/25 transition-all resize-none"
+          placeholder="Tell me about your project or inquiry..."
+        />
+      </div>
 
-        {submitStatus === "error" && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
-            <p className="text-sm text-red-300">
-              ✗ Something went wrong. Please try again or email directly.
-            </p>
-          </div>
-        )}
-      </form>
-    </SectionCard>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full sm:w-auto rounded-full bg-blue-600 px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-700 shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
+      </button>
+
+      {submitStatus === "success" && (
+        <div className="rounded-xl border border-green-200 bg-green-50 p-4">
+          <p className="text-sm text-green-700">
+            ✓ Message sent successfully! I&apos;ll get back to you soon.
+          </p>
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="rounded-xl border border-red-200 bg-red-50 p-4">
+          <p className="text-sm text-red-700">
+            ✗ Something went wrong. Please try again or email directly.
+          </p>
+        </div>
+      )}
+    </form>
   );
 }
 

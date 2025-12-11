@@ -71,7 +71,7 @@ export const hero: HeroContent = {
   subtitle: "Senior Software Engineer | Nest.js, React Js, PostgreSQL, AWS",
   summary:
     "Results-driven software engineer building scalable, robust web apps across Nest.js, React, Node, PostgreSQL, and MongoDB. Skilled in AWS deployments, Stripe payments, microservices, multi-tenant design, WebSockets/Redis, and secure auth with Azure AD B2C/Microsoft SSO.",
-  badges: ["Available for freelance & remote roles", "Shipping on Vercel / GitHub Actions"],
+  badges: ["Available for freelance & remote roles", "Shipping on AWS / AZURE"],
   secondaryBadges: ["Build | Ship | Measure | Iterate"],
   actions: {
     contact: "mailto:saadmehmood131@gmail.com",
@@ -399,7 +399,7 @@ export const contact: ContactContent = {
     "I can help with greenfield products, migrations to Next.js, performance work, and production hardening for MERN apps.",
   email: "saadmehmood131@gmail.com",
   booking: "https://cal.com/",
-  location: "Lahore, Pakistan",
+  location: "Pakistan",
 };
 
 export const education: Education[] = [

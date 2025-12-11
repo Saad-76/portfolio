@@ -1,67 +1,62 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SectionCard } from "@/components/section-card";
-import { projects } from "@/data/portfolio";
+import { projects, type Project } from "@/data/portfolio";
 
-export default function ProjectsPage() {
-  // Group projects by year based on status
-  const groupProjectsByYear = () => {
-    const grouped: { [key: string]: typeof projects } = {};
-    const currentYear = new Date().getFullYear();
-    
-    projects.forEach((project) => {
-      let year = "Recent";
-      if (project.status) {
-        // Extract year from status (e.g., "Apr 2025" -> "2025")
-        const yearMatch = project.status.match(/\d{4}/);
-        if (yearMatch) {
-          const projectYear = parseInt(yearMatch[0]);
-          if (projectYear === currentYear || projectYear === currentYear - 1) {
-            year = `${projectYear}`;
-          } else {
-            year = `${projectYear}`;
-          }
-        } else {
-          year = "Older";
-        }
+type GroupedProjects = { year: string; projects: Project[] }[];
+
+const groupProjectsByYear = (projectList: Project[]): GroupedProjects => {
+  const grouped: { [key: string]: Project[] } = {};
+  const currentYear = new Date().getFullYear();
+
+  projectList.forEach((project) => {
+    let year = "Recent";
+    if (project.status) {
+      const yearMatch = project.status.match(/\d{4}/);
+      if (yearMatch) {
+        const projectYear = parseInt(yearMatch[0]);
+        year = `${projectYear}`;
       } else {
         year = "Older";
       }
-      
-      if (!grouped[year]) {
-        grouped[year] = [];
-      }
-      grouped[year].push(project);
-    });
-    
-    // Sort years descending
-    return Object.keys(grouped)
-      .sort((a, b) => {
-        if (a === "Recent") return -1;
-        if (b === "Recent") return 1;
-        if (a === "Older") return 1;
-        if (b === "Older") return -1;
-        return parseInt(b) - parseInt(a);
-      })
-      .map((year) => ({ year, projects: grouped[year] }));
-  };
+    } else {
+      year = "Older";
+    }
 
-  const groupedProjects = groupProjectsByYear();
+    if (!grouped[year]) {
+      grouped[year] = [];
+    }
+    grouped[year].push(project);
+  });
+
+  return Object.keys(grouped)
+    .sort((a, b) => {
+      if (a === "Recent") return -1;
+      if (b === "Recent") return 1;
+      if (a === "Older") return 1;
+      if (b === "Older") return -1;
+      return parseInt(b) - parseInt(a);
+    })
+    .map((year) => ({ year, projects: grouped[year] }));
+};
+
+export default function ProjectsPage() {
+  const groupedProjects = groupProjectsByYear(projects);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      <div className="glow -left-10 -top-20 h-72 w-72 bg-indigo-500/50" />
-      <div className="glow right-0 top-10 h-64 w-64 bg-purple-500/40" />
-      <main className="relative mx-auto flex max-w-6xl flex-col gap-8 sm:gap-12 px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16 lg:px-0">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div className="flex-1">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-indigo-300">Portfolio</p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold bg-gradient-to-r from-indigo-200 to-purple-200 bg-clip-text text-transparent">All Projects</h1>
-            <p className="mt-2 sm:mt-3 text-sm sm:text-base text-slate-300">A collection of projects built with modern technologies</p>
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#3b82f608_1px,transparent_1px),linear-gradient(to_bottom,#3b82f608_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="glow -left-10 -top-20 h-72 w-72 bg-blue-500/20" />
+      <div className="glow right-0 top-10 h-64 w-64 bg-blue-500/15" />
+      <main className="relative mx-auto flex max-w-7xl flex-col gap-8 sm:gap-12 px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16 lg:px-0">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div className="flex-1 text-center sm:text-left">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-blue-600">Portfolio</p>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">All Projects</h1>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-700">A collection of projects built with modern technologies</p>
           </div>
           <Link
             href="/"
-            className="card-hover rounded-full border border-indigo-400/40 px-4 py-2 text-xs sm:text-sm font-semibold text-indigo-300 transition-all hover:border-indigo-400/60 hover:bg-indigo-500/10 whitespace-nowrap self-start sm:self-center"
+            className="card-hover rounded-full border border-gray-300 px-4 py-2 text-xs sm:text-sm font-semibold text-gray-700 transition-all hover:border-blue-500 hover:bg-blue-50 whitespace-nowrap self-start sm:self-center"
           >
             ← Back
           </Link>
@@ -69,60 +64,92 @@ export default function ProjectsPage() {
 
         <div className="flex flex-col gap-8 sm:gap-10 md:gap-12">
           {groupedProjects.map(({ year, projects: yearProjects }) => (
-            <SectionCard key={year}>
-              <div className="mb-6 pb-4 border-b border-indigo-500/20">
-                <h2 className="text-xl sm:text-2xl font-semibold text-indigo-200">{year}</h2>
-                <p className="mt-1 text-sm text-slate-400">{yearProjects.length} project{yearProjects.length !== 1 ? 's' : ''}</p>
+            <section key={year} className="rounded-3xl border border-gray-200/80 bg-white/70 backdrop-blur-sm shadow-sm p-5 sm:p-7">
+              <div className="max-w-3xl mx-auto w-full sm:max-w-none sm:mx-0">
+                <div className="flex flex-col sm:flex-row items-center sm:items-center sm:justify-between gap-3 mb-5 pb-3 border-b border-gray-200/80 text-center sm:text-left">
+                  <div className="w-full sm:w-auto">
+                    <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">{year}</h2>
+                    <p className="mt-1 text-sm text-gray-600">{yearProjects.length} project{yearProjects.length !== 1 ? 's' : ''}</p>
+                  </div>
+                <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 border border-blue-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide self-center sm:self-auto">
+                  Projects
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                </span>
+                </div>
               </div>
-              <div className="grid gap-5 sm:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              <div className="divide-y divide-gray-200/80">
                 {yearProjects.map((project) => (
                   <a
                     key={project.title}
                     href={project.link}
-                    className="glass card-hover group flex h-full flex-col rounded-xl sm:rounded-2xl overflow-hidden transition-all border-indigo-500/20 hover:border-indigo-500/40"
+                    className="group block py-5 first:pt-0 last:pb-0 px-1 sm:px-2 transition-all hover:bg-blue-50/60 rounded-2xl hover:shadow-md hover:shadow-blue-500/10"
                     target={project.link !== "#" ? "_blank" : undefined}
                     rel={project.link !== "#" ? "noreferrer" : undefined}
                   >
-                    {project.image && (
-                      <div className="relative w-full h-48 sm:h-56 overflow-hidden bg-slate-800/50">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
+                    <div className="grid gap-6 lg:gap-10 grid-cols-1 lg:grid-cols-[1.6fr_1fr] items-start">
+                      <div className="space-y-4 text-center sm:text-left">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 flex-wrap justify-center sm:justify-start text-center sm:text-left">
+                              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
+                                {project.title}
+                              </h3>
+                              {project.status && (
+                                <span className="rounded-full px-2.5 py-1 text-xs text-blue-700 bg-transparent border border-transparent sm:bg-blue-50 sm:border-blue-100 sm:border whitespace-nowrap">
+                                  {project.status}
+                                </span>
+                              )}
+                            </div>
+                            <p className="mt-2 text-sm sm:text-base text-gray-700 leading-relaxed text-center sm:text-left">
+                              {project.description}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                          {project.stack.slice(0, 5).map((tech) => (
+                            <span key={tech} className="rounded-full px-2.5 py-1 text-xs text-gray-700 bg-gray-100 border border-gray-200">
+                              {tech}
+                            </span>
+                          ))}
+                          {project.stack.length > 5 && (
+                            <span className="rounded-full px-2.5 py-1 text-xs text-gray-500 bg-gray-100 border border-gray-200">
+                              +{project.stack.length - 5}
+                            </span>
+                          )}
+                        </div>
+                        <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors justify-center sm:justify-start">
+                          <span>View project</span>
+                          <svg
+                            className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    )}
-                    <div className="flex flex-col flex-grow p-5 sm:p-6">
-                      <div className="flex items-start justify-between gap-3 mb-3">
-                        <h3 className="text-lg sm:text-xl font-semibold text-slate-50 group-hover:text-indigo-300 transition-colors flex-1 min-w-0">
-                          {project.title}
-                        </h3>
-                        {project.status && (
-                          <span className="tag rounded-full px-2.5 py-1 text-xs text-indigo-200 bg-indigo-500/20 border-indigo-400/30 flex-shrink-0 whitespace-nowrap">
-                            {project.status}
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed flex-grow mb-4">{project.description}</p>
-                      <div className="mt-auto flex flex-wrap gap-2">
-                        {project.stack.slice(0, 5).map((tech) => (
-                          <span key={tech} className="tag rounded-full px-2.5 py-1 text-xs text-slate-200 bg-slate-800/50">
-                            {tech}
-                          </span>
-                        ))}
-                        {project.stack.length > 5 && (
-                          <span className="tag rounded-full px-2.5 py-1 text-xs text-slate-400">
-                            +{project.stack.length - 5}
-                          </span>
-                        )}
-                      </div>
+                      {project.image && (
+                        <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </div>
+                      )}
                     </div>
                   </a>
                 ))}
               </div>
-            </SectionCard>
+            </section>
           ))}
         </div>
       </main>

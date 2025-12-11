@@ -1,4 +1,3 @@
-import { SectionCard } from "@/components/section-card";
 import { type ContactContent } from "@/data/portfolio";
 
 type ContactSectionProps = {
@@ -7,46 +6,55 @@ type ContactSectionProps = {
 
 export function ContactSection({ contact }: ContactSectionProps) {
   return (
-    <SectionCard>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm uppercase tracking-[0.25em] text-slate-400">Contact</p>
-          <h2 className="text-3xl font-semibold text-slate-50">{contact.headline}</h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-300">{contact.copy}</p>
-          {contact.location && (
-            <p className="mt-2 text-xs text-slate-400">📍 {contact.location}</p>
-          )}
+    <div className="space-y-4 sm:space-y-5">
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-600">Contact</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900">{contact.headline}</h2>
+        <p className="text-sm text-gray-700 max-w-2xl">
+          Let&apos;s build your next launch together—greenfield builds, Next.js migrations, performance tuning, or production hardening.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
+        {[
+          { label: "Avg. response", value: "< 24 hours", icon: "⏱️" },
+          { label: "Availability", value: "Remote · GMT+5", icon: "🌍" },
+          { label: "Preferred", value: "Email or short call", icon: "📞" },
+        ].map((item) => (
+          <div key={item.label} className="rounded-xl border border-gray-200 bg-white p-3 sm:p-3.5 shadow-sm flex items-center gap-3">
+            <span className="text-base">{item.icon}</span>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-gray-600">{item.label}</p>
+              <p className="text-sm font-semibold text-gray-900 mt-0.5">{item.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid gap-3 sm:gap-3.5 sm:grid-cols-2">
+        <div className="rounded-2xl border border-gray-200 bg-white p-4 sm:p-4.5 flex items-start gap-3">
+          <span className="text-base">🧭</span>
+          <div>
+            <p className="text-sm font-semibold text-gray-900">Project kickoff</p>
+            <p className="mt-1 text-sm text-gray-700">Scope fast, propose a thin slice, and align on success metrics.</p>
+          </div>
         </div>
-        <div className="flex gap-3">
-          <a
-            href={`mailto:${contact.email}`}
-            className="card-hover rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-900"
-          >
-            Email Me
-          </a>
-          <a
-            href={contact.booking}
-            className="card-hover rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100"
-          >
-            Book a call
-          </a>
+        <div className="rounded-2xl border border-gray-200 bg-white p-4 sm:p-4.5 flex items-start gap-3">
+          <span className="text-base">⚡</span>
+          <div>
+            <p className="text-sm font-semibold text-gray-900">Migrations & performance</p>
+            <p className="mt-1 text-sm text-gray-700">Next.js upgrades, caching, profiling, and DX improvements.</p>
+          </div>
+        </div>
+        <div className="rounded-2xl border border-gray-200 bg-gray-50/80 p-4 sm:p-4.5 flex items-start gap-3 sm:col-span-2">
+          <span className="text-base">🤝</span>
+          <div>
+            <p className="text-sm font-semibold text-gray-900">Consulting & mentorship</p>
+            <p className="mt-1 text-sm text-gray-700">Pairing on architecture, code reviews, and team enablement.</p>
+          </div>
         </div>
       </div>
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-slate-800/60 bg-white/5 p-4">
-          <p className="text-xl font-semibold text-slate-50">MERN + TypeScript</p>
-          <p className="mt-2 text-sm text-slate-300">Robust APIs with clean contracts and strong typing.</p>
-        </div>
-        <div className="rounded-2xl border border-slate-800/60 bg-white/5 p-4">
-          <p className="text-xl font-semibold text-slate-50">Performance</p>
-          <p className="mt-2 text-sm text-slate-300">Edge caching, server components, and profiler-driven wins.</p>
-        </div>
-        <div className="rounded-2xl border border-slate-800/60 bg-white/5 p-4">
-          <p className="text-xl font-semibold text-slate-50">Delivery</p>
-          <p className="mt-2 text-sm text-slate-300">Automated previews, CI/CD guardrails, and observability hooks.</p>
-        </div>
-      </div>
-    </SectionCard>
+    </div>
   );
 }
 

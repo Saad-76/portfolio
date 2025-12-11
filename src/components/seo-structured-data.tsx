@@ -1,4 +1,4 @@
-import { hero, projects, recommendations } from "@/data/portfolio";
+import { hero, projects } from "@/data/portfolio";
 
 export function SEOStructuredData() {
   const structuredData = {

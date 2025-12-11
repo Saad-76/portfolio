@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0e27;
-  --foreground: #f0f4f8;
-  --primary: #6366f1;
-  --primary-hover: #818cf8;
-  --accent: #10b981;
-  --accent-hover: #34d399;
-  --secondary: #8b5cf6;
-  --secondary-hover: #a78bfa;
+  --background: #ffffff;
+  --foreground: #1e293b;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #1d4ed8;
+  --accent-hover: #3b82f6;
+  --secondary: #60a5fa;
+  --secondary-hover: #93c5fd;
 }
 
 @theme inline {
@@ -20,11 +20,21 @@
 
 body {
   background: 
-    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15), transparent 40%),
-    radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.12), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 40%),
-    radial-gradient(circle at 0% 50%, rgba(59, 130, 246, 0.08), transparent 30%),
-    #0a0e27;
+    linear-gradient(to right, rgba(59, 130, 246, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(29, 78, 216, 0.03), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(96, 165, 250, 0.03), transparent 40%),
+    radial-gradient(circle at 0% 50%, rgba(59, 130, 246, 0.02), transparent 30%),
+    #ffffff;
+  background-size:
+    40px 40px,
+    40px 40px,
+    auto,
+    auto,
+    auto,
+    auto,
+    auto;
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   min-height: 100vh;
@@ -35,17 +45,17 @@ body {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.4);
-  color: #f0f4f8;
+  background: rgba(59, 130, 246, 0.2);
+  color: #1e293b;
 }
 
 .glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 0 1px rgba(99, 102, 241, 0.1);
+    0 20px 50px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
   backdrop-filter: blur(16px) saturate(180%);
 }
 
@@ -55,15 +65,15 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(99, 102, 241, 0.5);
+  border-color: rgba(59, 130, 246, 0.3);
   box-shadow: 
-    0 20px 40px rgba(99, 102, 241, 0.2),
-    0 0 0 1px rgba(99, 102, 241, 0.2);
+    0 20px 40px rgba(59, 130, 246, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.2);
 }
 
 .tag {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(59, 130, 246, 0.1);
   backdrop-filter: blur(8px);
 }
 
@@ -88,9 +98,9 @@ body {
 
 .hero-gradient {
   background: linear-gradient(120deg, 
-    rgba(99, 102, 241, 0.9),
-    rgba(16, 185, 129, 0.8),
-    rgba(139, 92, 246, 0.9)
+    rgba(59, 130, 246, 0.9),
+    rgba(29, 78, 216, 0.8),
+    rgba(96, 165, 250, 0.9)
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;

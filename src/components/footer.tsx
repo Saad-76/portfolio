@@ -5,18 +5,18 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-indigo-500/20 bg-slate-900/50 backdrop-blur-xl">
+    <footer className="relative border-t border-blue-500/20 bg-white/50 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
           {/* Brand and Copyright */}
           <div className="flex flex-col items-center sm:items-start gap-2">
             <Link
               href="/"
-              className="text-sm sm:text-base font-semibold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent transition-opacity hover:opacity-80"
+              className="text-sm sm:text-base font-semibold text-blue-600 transition-opacity hover:opacity-80"
             >
               Saad Mehmood
             </Link>
-            <p className="text-xs sm:text-sm text-slate-400">
+            <p className="text-xs sm:text-sm text-gray-600">
               © {currentYear} All rights reserved.
             </p>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
               href={hero.actions.github}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-slate-300 hover:text-indigo-300 hover:border-indigo-500/50 hover:bg-indigo-500/20 transition-all"
+              className="group flex items-center justify-center w-10 h-10 rounded-full border border-blue-500/30 bg-blue-50 text-gray-700 hover:text-blue-600 hover:border-blue-500/50 hover:bg-blue-100 transition-all"
               aria-label="GitHub"
             >
               <svg
@@ -46,7 +46,7 @@ export function Footer() {
               href={hero.actions.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-slate-300 hover:text-indigo-300 hover:border-indigo-500/50 hover:bg-indigo-500/20 transition-all"
+              className="group flex items-center justify-center w-10 h-10 rounded-full border border-blue-500/30 bg-blue-50 text-gray-700 hover:text-blue-600 hover:border-blue-500/50 hover:bg-blue-100 transition-all"
               aria-label="LinkedIn"
             >
               <svg
@@ -59,7 +59,7 @@ export function Footer() {
             </a>
             <a
               href={hero.actions.contact}
-              className="group flex items-center justify-center w-10 h-10 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-slate-300 hover:text-indigo-300 hover:border-indigo-500/50 hover:bg-indigo-500/20 transition-all"
+              className="group flex items-center justify-center w-10 h-10 rounded-full border border-blue-500/30 bg-blue-50 text-gray-700 hover:text-blue-600 hover:border-blue-500/50 hover:bg-blue-100 transition-all"
               aria-label="Email"
             >
               <svg
@@ -80,39 +80,39 @@ export function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div className="mt-8 pt-8 border-t border-indigo-500/20">
+        <div className="mt-8 pt-8 border-t border-blue-500/20">
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
             <Link
               href="/"
-              className="text-slate-400 hover:text-indigo-300 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               Home
             </Link>
-            <span className="text-slate-600">•</span>
+            <span className="text-gray-400">•</span>
             <Link
               href="/about"
-              className="text-slate-400 hover:text-indigo-300 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               About
             </Link>
-            <span className="text-slate-600">•</span>
+            <span className="text-gray-400">•</span>
             <Link
               href="/projects"
-              className="text-slate-400 hover:text-indigo-300 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               Projects
             </Link>
-            <span className="text-slate-600">•</span>
+            <span className="text-gray-400">•</span>
             <Link
               href="/blogs"
-              className="text-slate-400 hover:text-indigo-300 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               Blogs
             </Link>
-            <span className="text-slate-600">•</span>
+            <span className="text-gray-400">•</span>
             <Link
               href="/experience"
-              className="text-slate-400 hover:text-indigo-300 transition-colors"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
             >
               Experience
             </Link>
