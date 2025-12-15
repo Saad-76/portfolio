@@ -1,19 +1,5 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/projects", "/blogs", "/experience"].map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.7,
-  }));
-
-  return routes;
-}
-import { MetadataRoute } from "next";
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://saadmehmood.dev";
 
@@ -47,12 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/recommendations`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
     },
   ];
 }
