@@ -134,6 +134,12 @@ export const projects: Project[] = [
     stack: ["NestJS", "TypeScript", "Prisma", "PostgreSQL"],
     link: "#",
     status: "Jan–Feb 2025",
+    responsibilities: [
+      "Implemented RESTful APIs in NestJS to power core trading flows and account management.",
+      "Introduced Redis caching to reduce database load when updating trade and status data.",
+      "Used Prisma with PostgreSQL for type-safe queries and schema management.",
+      "Handled client communication and delivered features continuously during the project timeline.",
+    ],
   },
   {
     title: "Flight Data Management",
@@ -142,6 +148,11 @@ export const projects: Project[] = [
     stack: ["React", "MUI", "React Query", "NestJS", "TypeORM", "PostgreSQL", "AWS"],
     link: "#",
     status: "Apr–Jun 2024",
+    responsibilities: [
+      "Set up the NestJS backend with TypeORM and connected it to the PNR database to fetch flight data.",
+      "Normalized and stored flight and booking data in PostgreSQL so it was easier to query and report on.",
+      "Designed and built the React frontend using MUI and React Query for data fetching and state handling.",
+    ],
   },
   {
     title: "Premium Lemo",
@@ -149,26 +160,42 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Tailwind", "DaisyUI"],
     link: "#",
     status: "Mar–Apr 2024",
+    responsibilities: [
+      "Built a static marketing site for an automotive brand using Next.js for routing and page generation.",
+      "Used Tailwind CSS with DaisyUI components to design a clean, responsive layout for showcasing vehicles.",
+      "Optimized images and layout for fast loading times on both desktop and mobile devices.",
+    ],
   },
   {
     title: "Digital Signage CMS (MERN SaaS)",
     description:
-      "SaaS version of the digital signage product with canvas-based layout editing, real-time screen updates, and Stripe billing on a full MERN stack.",
+      "SaaS digital signage content management system built on the MERN stack, with canvas-based layout editing, real-time screen updates, and Stripe billing for subscription plans.",
     stack: ["React", "Material UI", "Redux", "RTC", "Fabric.js", "Node", "Express", "Sequelize", "PostgreSQL", "Stripe", "S3"],
     link: "#",
     status: "Jan–Mar 2024",
+    responsibilities: [
+      "Built the SaaS digital signage CMS on the MERN stack with React on the client and Node/Express on the server.",
+      "Implemented canvas-based screen design, real-time updates, and media storage using Fabric.js, RTC, PostgreSQL, and S3.",
+      "Integrated Stripe for subscription billing and managed the codebase with Git.",
+    ],
   },
   {
     title: "Ecommerce Site (MERN)",
-    description: "E-commerce store built on MERN with Stripe payments, Redux for state, and S3-backed media so the client could manage products end to end.",
+    description:
+      "Full MERN e‑commerce store with Stripe payments, Redux state management, and S3 media storage so the client could manage products, orders, and assets in one place.",
     stack: ["React", "Material UI", "Redux", "Node", "Express", "Sequelize", "PostgreSQL", "Stripe", "S3"],
     link: "#",
     status: "Jan–Feb 2024",
+    responsibilities: [
+      "Built the e-commerce frontend with React, Material UI, Formik forms, and Redux for state management, plus real-time updates using RTC.",
+      "Developed the backend API with Node.js, Express.js, Sequelize ORM, and PostgreSQL, using S3 for product images and media storage.",
+      "Integrated Stripe payment gateway for secure checkout and managed the project with Git version control.",
+    ],
   },
   {
     title: "Debian OS Application",
     description:
-      ".deb desktop application using realtime sockets, push notifications, and S3-backed media so updates reach users without manual refreshes.",
+      "Debian (.deb) desktop application using realtime sockets, push notifications, and S3-backed media so updates reach users without manual refreshes.",
     stack: ["Node", "Express", "Socket.io", "jQuery", "Bootstrap", "PNS", "S3"],
     link: "#",
     status: "Oct–Dec 2023",
@@ -176,7 +203,7 @@ export const projects: Project[] = [
   {
     title: "Windows Application",
     description:
-      ".exe desktop application backed by a Node/Express API with sockets, push notifications, and S3 media storage for a smoother user experience.",
+      "Windows (.exe) desktop application backed by a Node/Express API with sockets, push notifications, and S3 media storage for a smoother user experience.",
     stack: ["Node", "Express", "Socket.io", "jQuery", "Bootstrap", "PNS", "S3"],
     link: "#",
     status: "May–Dec 2023",
@@ -184,7 +211,7 @@ export const projects: Project[] = [
   {
     title: "AGI Cybersecurity for Quantum Cloud Robotics",
     description:
-      "Research prototype exploring how ML and early AGI ideas could spot and prevent security issues in quantum cloud robotics workloads.",
+      "Research prototype exploring how machine learning and early AGI techniques could detect and prevent security issues in quantum cloud robotics workloads.",
     stack: ["ML/AGI", "Cloud Robotics"],
     link: "#",
     status: "Nov 2022–Jun 2023",
@@ -192,84 +219,95 @@ export const projects: Project[] = [
   {
     title: "Internal Management System",
     description:
-      "Internal operations suite with canvas-style tooling and analytics dashboards, deployed to AWS for the client’s internal teams.",
+      "Internal operations system with canvas-style tooling and analytics dashboards, deployed to AWS to support the client’s internal teams.",
     stack: ["React", "Fabric.js", "Redux", "Material UI", "Formik", "Charts", "AWS"],
     link: "#",
     status: "Nov 2022–May 2023",
   },
   {
     title: "Blog Site",
-    description: "Lightweight blog experience with React, Tailwind, and client routing.",
+    description:
+      "Lightweight blog site built with React and Tailwind CSS, using client-side routing for smooth navigation between posts.",
     stack: ["React", "Tailwind", "React Router"],
     link: "#",
     status: "Jan–Feb 2023",
   },
   {
     title: "SaaS Product",
-    description: "SaaS platform with React front-end and Ruby on Rails backend.",
+    description:
+      "Software-as-a-service product with a React front‑end and Ruby on Rails backend, built to onboard customers quickly and support recurring usage.",
     stack: ["React", "Ruby on Rails"],
     link: "#",
     status: "Aug–Nov 2022",
   },
   {
     title: "Kunji · Society Management",
-    description: "Society management system with Redux-Saga state and MUI design system.",
+    description:
+      "Society management web application using React, Redux‑Saga, and Material UI to handle residents, payments, and administration tasks.",
     stack: ["React", "Redux-Saga", "Material UI"],
     link: "#",
     status: "Feb–Aug 2022",
   },
   {
     title: "ROXO · Crypto Gaming",
-    description: "Crypto gaming website for earning ROXO through multiple games.",
+    description:
+      "Crypto gaming website built with React where users can play multiple games and earn ROXO tokens as rewards.",
     stack: ["React"],
     link: "#",
     status: "Jan–Jun 2022",
   },
   {
     title: "Arkad · Admin Portal",
-    description: "Admin portal delivery with React front-end.",
+    description:
+      "Admin portal built with React to manage users, content, and configuration from a simple web dashboard.",
     stack: ["React"],
     link: "#",
     status: "Feb–Mar 2022",
   },
   {
     title: "Coast Collectibles",
-    description: "Commerce experience for collectibles.",
+    description:
+      "Commerce site for collectibles built with React, focused on clear product presentation and an easy browsing experience.",
     stack: ["React"],
     link: "#",
     status: "Jan–Feb 2022",
   },
   {
     title: "Meta Street Apes",
-    description: "NFT/web project delivery.",
+    description:
+      "NFT landing site built with React to showcase the Meta Street Apes collection and guide users into the ecosystem.",
     stack: ["React"],
     link: "#",
     status: "Jan–Feb 2022",
   },
   {
     title: "Buey Tuhan",
-    description: "Web build.",
+    description:
+      "Marketing website built with React to present the Buey Tuhan brand and core offerings.",
     stack: ["React"],
     link: "#",
     status: "Jan 2022",
   },
   {
     title: "Xee Verse Token",
-    description: "Gaming/token site.",
+    description:
+      "Gaming and token site built with React to promote the Xee Verse token and related experiences.",
     stack: ["React"],
     link: "#",
     status: "Dec 2021–Jan 2022",
   },
   {
     title: "Gaming Website",
-    description: "Gaming-focused web experience.",
+    description:
+      "Gaming-focused website built with React to highlight titles, news, and community updates.",
     stack: ["React"],
     link: "#",
     status: "Jan 2022",
   },
   {
     title: "Kenya Exports",
-    description: "Exports-focused site delivery.",
+    description:
+      "Exports-focused website built with React to showcase Kenyan products and connect buyers with suppliers.",
     stack: ["React"],
     link: "#",
     status: "Oct–Dec 2021",

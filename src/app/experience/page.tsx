@@ -7,10 +7,25 @@ import { experiences, metrics } from "@/data/portfolio";
 const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Experience | Saad Mehmood — Professional Journey",
-  description: "Professional experience of Saad Mehmood: full-stack engineering, Nest.js, React, PostgreSQL, AWS, and leadership.",
+  title: "Experience | Saad Mehmood — Professional Journey | Software Engineer",
+  description: "Professional experience of Saad Mehmood - Senior Software Engineer at Intagleo Systems. Full-stack engineering experience with Nest.js, React, PostgreSQL, AWS, and team leadership.",
+  keywords: [
+    "Saad Mehmood Experience",
+    "Saad Mehmood Resume",
+    "Senior Software Engineer Experience",
+    "Intagleo Systems",
+    "Full Stack Engineer",
+    "Nest.js Experience",
+    "React Experience",
+    "MERN Stack Experience",
+  ],
   alternates: {
     canonical: `${siteUrl}/experience`,
+  },
+  openGraph: {
+    title: "Experience | Saad Mehmood - Senior Software Engineer",
+    description: "Professional journey and experience of Saad Mehmood - Senior Software Engineer.",
+    url: `${siteUrl}/experience`,
   },
 };
 

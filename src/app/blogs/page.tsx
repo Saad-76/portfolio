@@ -6,10 +6,25 @@ import { blogs } from "@/data/portfolio";
 const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Blogs | Saad Mehmood — Engineering Articles",
-  description: "Technical articles and tutorials by Saad Mehmood on Node.js, Next.js, TypeScript, authentication, and performance.",
+  title: "Blogs | Saad Mehmood — Engineering Articles & Tutorials",
+  description: "Technical articles and tutorials by Saad Mehmood on Node.js, Next.js, TypeScript, React, authentication, API development, and performance optimization.",
+  keywords: [
+    "Saad Mehmood Blog",
+    "Saad Mehmood Articles",
+    "Node.js Tutorials",
+    "Next.js Tutorials",
+    "TypeScript Tutorials",
+    "React Tutorials",
+    "API Development",
+    "Authentication Tutorials",
+  ],
   alternates: {
     canonical: `${siteUrl}/blogs`,
+  },
+  openGraph: {
+    title: "Blogs | Saad Mehmood - Engineering Articles",
+    description: "Technical articles and tutorials by Saad Mehmood on web development and software engineering.",
+    url: `${siteUrl}/blogs`,
   },
 };
 

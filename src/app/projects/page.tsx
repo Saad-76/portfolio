@@ -6,10 +6,26 @@ import { projects, type Project } from "@/data/portfolio";
 const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Projects | Saad Mehmood — Featured Work",
-  description: "All projects by Saad Mehmood: full-stack, Nest.js, React, TypeScript, PostgreSQL, AWS, and more.",
+  title: "Projects by Saad Mehmood | Portfolio | Full Stack Developer",
+  description: "Portfolio projects by Saad Mehmood - Senior Software Engineer. Featured work including MERN stack applications, Nest.js APIs, React applications, Next.js sites, and AWS deployments.",
+  keywords: [
+    "Saad Mehmood Projects",
+    "Saad Mehmood Portfolio",
+    "MERN Stack Projects",
+    "Nest.js Projects",
+    "React Projects",
+    "Next.js Projects",
+    "Full Stack Projects",
+    "AWS Projects",
+    "PostgreSQL Projects",
+  ],
   alternates: {
     canonical: `${siteUrl}/projects`,
+  },
+  openGraph: {
+    title: "Projects by Saad Mehmood | Portfolio",
+    description: "Featured projects by Saad Mehmood - Full Stack Developer specializing in MERN stack, Nest.js, React, and Next.js.",
+    url: `${siteUrl}/projects`,
   },
 };
 
@@ -63,7 +79,9 @@ export default function ProjectsPage() {
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-blue-600">Portfolio</p>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">All Projects</h1>
-                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-700">A collection of projects built with modern technologies</p>
+                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-gray-700">
+                  A selection of client and personal projects built with React, Next.js, NestJS, MERN stack, PostgreSQL, and AWS.
+                </p>
           </div>
           <Link
             href="/"
@@ -115,7 +133,7 @@ export default function ProjectsPage() {
                               {project.description}
                             </p>
                             {project.responsibilities && project.responsibilities.length > 0 && (
-                              <ul className="mt-2 sm:mt-3 space-y-1 text-sm text-gray-600 text-left list-disc list-inside">
+                              <ul className="mt-3 sm:mt-4 space-y-1.5 text-sm text-gray-600 list-disc pl-5 max-w-2xl mx-auto sm:mx-0 text-left">
                                 {project.responsibilities.map((item, idx) => (
                                   <li key={idx}>{item}</li>
                                 ))}

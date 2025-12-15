@@ -8,10 +8,28 @@ import { contact, education, toolset } from "@/data/portfolio";
 const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
 
 export const metadata: Metadata = {
-  title: "About | Saad Mehmood — Senior Software Engineer",
-  description: "Skills, background, and education of Saad Mehmood. Full-stack, Nest.js, React, TypeScript, PostgreSQL, AWS, CI/CD.",
+  title: "About Saad Mehmood | Skills & Background | Senior Software Engineer",
+  description: "Learn about Saad Mehmood - Senior Software Engineer with expertise in full stack development, Nest.js, React, TypeScript, PostgreSQL, AWS, and CI/CD. Skills, background, and education.",
+  keywords: [
+    "Saad Mehmood",
+    "Saad Mehmood About",
+    "Saad Mehmood Skills",
+    "Senior Software Engineer",
+    "Full Stack Developer Skills",
+    "Nest.js Developer",
+    "React Developer",
+    "TypeScript Developer",
+    "PostgreSQL Developer",
+    "AWS Developer",
+    "CI/CD Developer",
+  ],
   alternates: {
     canonical: `${siteUrl}/about`,
+  },
+  openGraph: {
+    title: "About Saad Mehmood | Senior Software Engineer",
+    description: "Skills, background, and education of Saad Mehmood - Senior Software Engineer specializing in full stack development.",
+    url: `${siteUrl}/about`,
   },
 };
 
