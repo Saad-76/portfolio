@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://portfolio-sandy-two-85.vercel.app/sitemap.xml",
+    sitemap: "https://saadmehmood.dev/sitemap.xml",
   };
 }
 

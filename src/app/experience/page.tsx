@@ -4,7 +4,7 @@ import { ExperienceSection } from "@/components/experience-section";
 import { SectionCard } from "@/components/section-card";
 import { experiences, metrics } from "@/data/portfolio";
 
-const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+const siteUrl = "https://saadmehmood.dev";
 
 export const metadata: Metadata = {
   title: "Experience | Saad Mehmood — Professional Journey | Software Engineer",

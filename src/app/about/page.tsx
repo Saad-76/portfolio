@@ -5,7 +5,7 @@ import { EducationSection } from "@/components/education-section";
 import { ToolingSection } from "@/components/tooling-section";
 import { contact, education, toolset } from "@/data/portfolio";
 
-const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+const siteUrl = "https://saadmehmood.dev";
 
 export const metadata: Metadata = {
   title: "About Saad Mehmood | Skills & Background | Senior Software Engineer",

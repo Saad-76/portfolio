@@ -51,14 +51,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Saad Mehmood" }],
   creator: "Saad Mehmood",
   publisher: "Saad Mehmood",
-  metadataBase: new URL("https://portfolio-sandy-two-85.vercel.app"),
+  metadataBase: new URL("https://saadmehmood.dev"),
   alternates: {
-    canonical: "https://portfolio-sandy-two-85.vercel.app",
+    canonical: "https://saadmehmood.dev",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-sandy-two-85.vercel.app",
+    url: "https://saadmehmood.dev",
     title: "Saad Mehmood | Senior Software Engineer | Full Stack Developer",
     description: "Saad Mehmood - Senior Software Engineer with 4+ years of experience building scalable web applications with Nest.js, React, Next.js, PostgreSQL, and AWS.",
     siteName: "Saad Mehmood Portfolio",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "uKOwib6S2W06MI_v8Z3M10HQpHCjyZrfo9eh",
   },
 };
 

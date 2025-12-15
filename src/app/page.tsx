@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     "MERN Stack Developer",
   ],
   alternates: {
-    canonical: "https://portfolio-sandy-two-85.vercel.app",
+    canonical: "https://saadmehmood.dev",
   },
   openGraph: {
     title: "Saad Mehmood | Senior Software Engineer Portfolio",
     description: "Portfolio of Saad Mehmood - Senior Software Engineer specializing in full stack development with Nest.js, React, Next.js, and PostgreSQL.",
-    url: "https://portfolio-sandy-two-85.vercel.app",
+    url: "https://saadmehmood.dev",
   },
 };
 

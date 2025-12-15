@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects, type Project } from "@/data/portfolio";
 
-const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+const siteUrl = "https://saadmehmood.dev";
 
 export const metadata: Metadata = {
   title: "Projects by Saad Mehmood | Portfolio | Full Stack Developer",

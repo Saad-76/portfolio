@@ -7,7 +7,7 @@ export function SEOStructuredData() {
     name: hero.title,
     jobTitle: "Senior Software Engineer",
     description: hero.summary,
-    url: "https://portfolio-sandy-two-85.vercel.app",
+    url: "https://saadmehmood.dev",
     sameAs: [
       hero.actions.github,
       hero.actions.linkedin,
@@ -51,7 +51,7 @@ export function SEOStructuredData() {
     "@type": "WebSite",
     name: `${hero.title} - Portfolio`,
     description: hero.summary,
-    url: "https://portfolio-sandy-two-85.vercel.app",
+    url: "https://saadmehmood.dev",
     author: {
       "@type": "Person",
       name: hero.title,
@@ -75,6 +75,32 @@ export function SEOStructuredData() {
     })),
   };
 
+  const professionalServiceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: `${hero.title} - Software Development Services`,
+    description: "Full stack web development services including React, Next.js, NestJS, API development, and cloud deployment",
+    provider: {
+      "@type": "Person",
+      name: hero.title,
+      jobTitle: "Senior Software Engineer",
+      email: hero.actions.contact.replace("mailto:", ""),
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Worldwide",
+    },
+    serviceType: [
+      "Full Stack Development",
+      "React Development",
+      "Next.js Development",
+      "NestJS API Development",
+      "PostgreSQL Database Design",
+      "AWS Cloud Deployment",
+      "Microservices Architecture",
+    ],
+  };
+
   return (
     <>
       <script
@@ -88,6 +114,10 @@ export function SEOStructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceStructuredData) }}
       />
     </>
   );

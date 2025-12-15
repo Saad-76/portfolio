@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SectionCard } from "@/components/section-card";
 import { blogs } from "@/data/portfolio";
 
-const siteUrl = "https://portfolio-sandy-two-85.vercel.app";
+const siteUrl = "https://saadmehmood.dev";
 
 export const metadata: Metadata = {
   title: "Blogs | Saad Mehmood — Engineering Articles & Tutorials",
