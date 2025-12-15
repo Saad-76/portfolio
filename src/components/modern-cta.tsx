@@ -39,7 +39,7 @@ export function CTASection({ contact }: CTASectionProps) {
               <div className="space-y-2">
                 <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">Ready to talk?</h3>
                 <p className="text-sm text-gray-600">
-                  I can help with greenfield products, migrations to Next.js, performance work, and production hardening for MERN apps.
+                  Need a full stack developer for your next project? Looking for help with React development, Node.js backend, or Next.js migration? Let's discuss how I can help build or improve your web application.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">

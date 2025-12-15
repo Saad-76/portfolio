@@ -7,7 +7,7 @@ type HeroSectionProps = {
 
 export function HeroSection({ hero, metrics }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-12">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-40 pb-12 sm:pt-44 lg:pt-24">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl animate-float" />
@@ -19,10 +19,10 @@ export function HeroSection({ hero, metrics }: HeroSectionProps) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-items-center lg:justify-items-start">
           {/* Left Content */}
           <div className="space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 backdrop-blur-sm">
+              <div className="space-y-4">
+              <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 backdrop-blur-sm shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                <span className="text-xs sm:text-sm text-gray-700 font-medium uppercase tracking-wider">
+                <span className="text-xs sm:text-sm text-blue-700 font-semibold uppercase tracking-wider">
                   {hero.subtitle}
                 </span>
               </div>
@@ -46,7 +46,7 @@ export function HeroSection({ hero, metrics }: HeroSectionProps) {
               {hero.badges.map((badge) => (
                 <span
                   key={badge}
-                  className="px-4 py-2 rounded-lg bg-gray-100 border border-gray-200 text-sm text-gray-700 backdrop-blur-sm hover:bg-gray-200 hover:border-gray-300 transition-all"
+                  className="px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-sm text-blue-700 shadow-sm backdrop-blur-sm hover:bg-blue-100 hover:border-blue-300 transition-all"
                 >
                   {badge}
                 </span>

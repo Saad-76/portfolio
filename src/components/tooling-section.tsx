@@ -8,8 +8,8 @@ export function ToolingSection({ toolset }: ToolingSectionProps) {
   return (
     <SectionCard className="flex h-full flex-col gap-4 text-center sm:text-left">
       <div>
-        <p className="text-sm uppercase tracking-[0.25em] text-blue-600">Skills</p>
-        <h2 className="text-3xl font-semibold text-gray-900">Technologies & Tools</h2>
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-600 mb-1">Skills</p>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">Technologies & Tools</h2>
       </div>
       <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
         {toolset.map((tool) => (

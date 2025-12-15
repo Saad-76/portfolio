@@ -58,7 +58,7 @@ export default function ProjectsPage() {
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#3b82f608_1px,transparent_1px),linear-gradient(to_bottom,#3b82f608_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       <div className="glow -left-10 -top-20 h-72 w-72 bg-blue-500/20" />
       <div className="glow right-0 top-10 h-64 w-64 bg-blue-500/15" />
-      <main className="relative mx-auto flex max-w-7xl flex-col gap-8 sm:gap-12 px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16 lg:px-0">
+      <main className="relative mx-auto flex max-w-7xl flex-col gap-8 sm:gap-12 px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16 lg:px-6">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-blue-600">Portfolio</p>
@@ -93,12 +93,12 @@ export default function ProjectsPage() {
                   <a
                     key={project.title}
                     href={project.link}
-                    className="group block py-5 first:pt-0 last:pb-0 px-1 sm:px-2 transition-all hover:bg-blue-50/60 rounded-2xl hover:shadow-md hover:shadow-blue-500/10"
+                    className="group block px-2 sm:px-3 py-6 rounded-2xl transition-all hover:bg-blue-50/60 hover:shadow-md hover:shadow-blue-500/10"
                     target={project.link !== "#" ? "_blank" : undefined}
                     rel={project.link !== "#" ? "noreferrer" : undefined}
                   >
                     <div className="grid gap-6 lg:gap-10 grid-cols-1 lg:grid-cols-[1.6fr_1fr] items-start">
-                      <div className="space-y-4 text-center sm:text-left">
+                      <div className="space-y-3 text-center sm:text-left">
                         <div className="flex items-start gap-3">
                           <div className="flex-1 min-w-0">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2 flex-wrap justify-center sm:justify-start text-center sm:text-left">
@@ -114,6 +114,13 @@ export default function ProjectsPage() {
                             <p className="mt-2 text-sm sm:text-base text-gray-700 leading-relaxed text-center sm:text-left">
                               {project.description}
                             </p>
+                            {project.responsibilities && project.responsibilities.length > 0 && (
+                              <ul className="mt-2 sm:mt-3 space-y-1 text-sm text-gray-600 text-left list-disc list-inside">
+                                {project.responsibilities.map((item, idx) => (
+                                  <li key={idx}>{item}</li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
@@ -127,22 +134,6 @@ export default function ProjectsPage() {
                               +{project.stack.length - 5}
                             </span>
                           )}
-                        </div>
-                        <div className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition-colors justify-center sm:justify-start">
-                          <span>View project</span>
-                          <svg
-                            className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
                         </div>
                       </div>
                       {project.image && (

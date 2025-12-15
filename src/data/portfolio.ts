@@ -5,6 +5,7 @@ export type Project = {
   link: string;
   status?: string;
   image?: string;
+  responsibilities?: string[];
 };
 
 export type Experience = {
@@ -70,7 +71,7 @@ export const hero: HeroContent = {
   title: "Saad Mehmood",
   subtitle: "Senior Software Engineer | Nest.js, React Js, PostgreSQL, AWS",
   summary:
-    "Results-driven software engineer building scalable, robust web apps across Nest.js, React, Node, PostgreSQL, and MongoDB. Skilled in AWS deployments, Stripe payments, microservices, multi-tenant design, WebSockets/Redis, and secure auth with Azure AD B2C/Microsoft SSO.",
+    "Full stack developer building production-ready web applications with React, Next.js, NestJS, and Node.js. I work with PostgreSQL and MongoDB databases, deploy to AWS and Azure, and build APIs, microservices, and authentication systems that scale.",
   badges: ["Available for freelance & remote roles", "Shipping on AWS / AZURE"],
   secondaryBadges: ["Build | Ship | Measure | Iterate"],
   actions: {
@@ -82,39 +83,54 @@ export const hero: HeroContent = {
 
 export const metrics: Metric[] = [
   { value: "25+", label: "Production features shipped" },
-  { value: "4y+", label: "MERN product experience" },
-  { value: "98%", label: "Uptime across deployed apps" },
-  { value: "CI/CD", label: "Vercel + GitHub Actions ready" },
+  { value: "4y+", label: "MERN stack development" },
+  { value: "98%", label: "Uptime on production apps" },
+  { value: "CI/CD", label: "AWS and Azure deployments" },
 ];
 
 export const projects: Project[] = [
   {
     title: "Digital Signage CMS (Microservices)",
     description:
-      "Scalable multi-tenant digital signage with custom API gateway, modular middleware, and resilient messaging.",
+      "Multi-tenant digital signage platform where I built a custom API gateway, modular services, and reliable messaging so new screens can be onboarded without downtime.",
     stack: ["React", "Redux Toolkit", "NestJS", "TypeORM", "PostgreSQL", "Redis", "RabbitMQ", "AWS", "Azure"],
     link: "#",
     status: "Apr 2025",
+    responsibilities: [
+      "Designed and implemented the NestJS microservices architecture and custom API gateway.",
+      "Integrated Redis, RabbitMQ, and PostgreSQL to keep messaging and data flows reliable.",
+      "Collaborated with frontend developers to align API contracts with React/Redux needs.",
+    ],
   },
   {
-    title: "IntVue · AI Interview Platform",
+    title: "AI Interview Platform",
     description:
-      "Interview management system with AI-generated questions and automated candidate scoring via Python/Gemini service layer.",
+      "Interview management tool where candidates answer AI-generated questions and are scored automatically through a Python/Gemini service that I wired into the core workflow.",
     stack: ["Ruby on Rails", "PostgreSQL", "Python AI service", "ActiveRecord"],
     link: "#",
     status: "Feb–Jun 2025",
+    responsibilities: [
+      "Extended the Rails application with new flows for AI‑generated interviews.",
+      "Connected the Python/Gemini scoring service with secure APIs and background jobs.",
+      "Worked with stakeholders to refine scoring logic and reporting views.",
+    ],
   },
   {
-    title: "ContentGen · AI Content Ops",
+    title: "AI Content Ops",
     description:
-      "Next.js + Node/TS content pipeline with Azure B2C auth, webhooks, sockets, Stripe, and ChatGPT/Adobe InDesign automation.",
+      "Content operations system for marketing teams, built with Next.js and Node/TS, using Azure B2C login, webhooks, sockets, Stripe billing, and automation with ChatGPT and Adobe InDesign.",
     stack: ["Next.js", "Node/TS", "Express", "TypeORM", "PostgreSQL", "Azure B2C", "Stripe", "Redis", "Socket"],
     link: "#",
     status: "Apr 2024–Mar 2025",
+    responsibilities: [
+      "Built core Next.js pages and Node/TS APIs for content workflows and approvals.",
+      "Integrated Azure B2C auth, Stripe billing, and webhooks for external services.",
+      "Implemented socket‑based realtime updates and automation with ChatGPT and InDesign.",
+    ],
   },
   {
-    title: "Checksome Backend",
-    description: "Mobile backend with NestJS, Prisma, and PostgreSQL focused on correctness and delivery speed.",
+    title: "Trading Mobile App Backend",
+    description: "Backend for a trading mobile app using NestJS, Prisma, and PostgreSQL, focused on getting features out quickly while keeping data and calculations correct.",
     stack: ["NestJS", "TypeScript", "Prisma", "PostgreSQL"],
     link: "#",
     status: "Jan–Feb 2025",
@@ -122,14 +138,14 @@ export const projects: Project[] = [
   {
     title: "Flight Data Management",
     description:
-      "Ops console for flight data with React/MUI front-end and NestJS/TypeORM API; shipped with AWS deployment and repository/factory patterns.",
+      "Operations console for airline data with a React/MUI frontend and a NestJS/TypeORM API, deployed to AWS with clean repository patterns and a focus on day-to-day usability.",
     stack: ["React", "MUI", "React Query", "NestJS", "TypeORM", "PostgreSQL", "AWS"],
     link: "#",
     status: "Apr–Jun 2024",
   },
   {
     title: "Premium Lemo",
-    description: "Automotive site with a performant Next.js + Tailwind/DaisyUI frontend.",
+    description: "Automotive website built with Next.js and Tailwind/DaisyUI, tuned for quick page loads and a clean browsing experience on both desktop and mobile.",
     stack: ["Next.js", "TypeScript", "Tailwind", "DaisyUI"],
     link: "#",
     status: "Mar–Apr 2024",
@@ -137,14 +153,14 @@ export const projects: Project[] = [
   {
     title: "Digital Signage CMS (MERN SaaS)",
     description:
-      "SaaS digital signage with rich canvas editing, RTC, and Stripe billing on a MERN stack.",
+      "SaaS version of the digital signage product with canvas-based layout editing, real-time screen updates, and Stripe billing on a full MERN stack.",
     stack: ["React", "Material UI", "Redux", "RTC", "Fabric.js", "Node", "Express", "Sequelize", "PostgreSQL", "Stripe", "S3"],
     link: "#",
     status: "Jan–Mar 2024",
   },
   {
     title: "Ecommerce Site (MERN)",
-    description: "Full e-commerce flow with Stripe payments, Redux state, and S3 media storage.",
+    description: "E-commerce store built on MERN with Stripe payments, Redux for state, and S3-backed media so the client could manage products end to end.",
     stack: ["React", "Material UI", "Redux", "Node", "Express", "Sequelize", "PostgreSQL", "Stripe", "S3"],
     link: "#",
     status: "Jan–Feb 2024",
@@ -152,7 +168,7 @@ export const projects: Project[] = [
   {
     title: "Debian OS Application",
     description:
-      ".deb desktop app with realtime sockets, push notifications, and S3-backed media services.",
+      ".deb desktop application using realtime sockets, push notifications, and S3-backed media so updates reach users without manual refreshes.",
     stack: ["Node", "Express", "Socket.io", "jQuery", "Bootstrap", "PNS", "S3"],
     link: "#",
     status: "Oct–Dec 2023",
@@ -160,7 +176,7 @@ export const projects: Project[] = [
   {
     title: "Windows Application",
     description:
-      ".exe desktop app using sockets and push notifications with Node/Express backend and S3 media.",
+      ".exe desktop application backed by a Node/Express API with sockets, push notifications, and S3 media storage for a smoother user experience.",
     stack: ["Node", "Express", "Socket.io", "jQuery", "Bootstrap", "PNS", "S3"],
     link: "#",
     status: "May–Dec 2023",
@@ -168,7 +184,7 @@ export const projects: Project[] = [
   {
     title: "AGI Cybersecurity for Quantum Cloud Robotics",
     description:
-      "Research prototype applying ML/AGI to detect and prevent cyber threats in quantum cloud robotics.",
+      "Research prototype exploring how ML and early AGI ideas could spot and prevent security issues in quantum cloud robotics workloads.",
     stack: ["ML/AGI", "Cloud Robotics"],
     link: "#",
     status: "Nov 2022–Jun 2023",
@@ -176,7 +192,7 @@ export const projects: Project[] = [
   {
     title: "Internal Management System",
     description:
-      "Internal ops suite with rich canvas tooling and analytics shipped to AWS.",
+      "Internal operations suite with canvas-style tooling and analytics dashboards, deployed to AWS for the client’s internal teams.",
     stack: ["React", "Fabric.js", "Redux", "Material UI", "Formik", "Charts", "AWS"],
     link: "#",
     status: "Nov 2022–May 2023",
@@ -396,7 +412,7 @@ export const recommendations: Recommendation[] = [
 export const contact: ContactContent = {
   headline: "Let's build your next launch",
   copy:
-    "I can help with greenfield products, migrations to Next.js, performance work, and production hardening for MERN apps.",
+    "Whether you're building a new web application from scratch, migrating to Next.js, optimizing your React app performance, or need help getting your MERN stack ready for production, I can help. I've built projects from the ground up and improved existing applications to handle real users.",
   email: "saadmehmood131@gmail.com",
   booking: "https://cal.com/",
   location: "Pakistan",

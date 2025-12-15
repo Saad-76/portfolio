@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saad Mehmood | Senior Software Engineer | Full-Stack Developer",
+  title: "Saad Mehmood",
   description: "Senior Software Engineer with 4+ years of experience building scalable web applications. Expert in Nest.js, React, TypeScript, PostgreSQL, AWS, and microservices. Available for freelance and remote opportunities.",
   keywords: [
     "Senior Software Engineer",

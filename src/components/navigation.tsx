@@ -33,10 +33,10 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
+                className={`px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 border-b-2 ${
                   isActive
-                    ? "bg-blue-100 text-blue-700 border border-blue-300 shadow-md"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-blue-700 border-blue-500"
+                    : "text-gray-700 border-transparent hover:text-blue-600 hover:border-blue-300"
                 }`}
               >
                 {item.label}
@@ -65,10 +65,10 @@ export function Navigation() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-xl px-3 py-2 text-sm font-medium transition-all ${
+                  className={`px-3 py-2 text-sm font-medium transition-all border-b ${
                     isActive
-                      ? "bg-blue-100 text-blue-700 border border-blue-300"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      ? "text-blue-700 border-blue-500"
+                      : "text-gray-700 border-transparent hover:text-blue-600 hover:border-blue-300"
                   }`}
                 >
                   {item.label}

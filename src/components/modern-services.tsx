@@ -2,25 +2,25 @@ const services = [
   {
     icon: "🚀",
     title: "Full-Stack Development",
-    description: "Building scalable web applications with modern frameworks and best practices",
+    description: "I build full stack web applications using React and Next.js for the frontend, and NestJS or Node.js for backend development. I create REST APIs and GraphQL endpoints that connect everything together and handle real user traffic.",
     gradient: "from-slate-700/10 to-slate-800/10",
   },
   {
     icon: "⚡",
     title: "Backend Architecture",
-    description: "Designing robust APIs, microservices, and database solutions",
+    description: "I design backend systems and build APIs that are easy to maintain. I set up microservices architecture when it makes sense, and work with PostgreSQL databases, MongoDB, and Redis caching based on what each project needs.",
     gradient: "from-blue-500/10 to-blue-500/10",
   },
   {
     icon: "🔒",
     title: "Security & Auth",
-    description: "Implementing secure authentication with Azure AD B2C, Microsoft SSO, and more",
+    description: "I implement secure authentication systems using Azure AD B2C and Microsoft SSO integration. User authentication and data security are built into every project from day one, not added as an afterthought later on.",
     gradient: "from-blue-500/10 to-blue-500/10",
   },
   {
     icon: "☁️",
     title: "Cloud Deployment",
-    description: "Deploying and managing applications on AWS with CI/CD pipelines",
+    description: "I deploy web applications to AWS cloud and Azure cloud platforms. I configure CI/CD pipelines for automated deployments, set up monitoring and logging systems, and ensure applications stay online and perform well.",
     gradient: "from-blue-500/10 to-blue-500/10",
   },
 ];
@@ -35,7 +35,7 @@ export function ServicesSection() {
             What I Do
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Specialized in building production-ready applications with cutting-edge technologies
+            I build web applications that run in production, not just on my laptop. Here's the kind of work I do day to day.
           </p>
         </div>
 
